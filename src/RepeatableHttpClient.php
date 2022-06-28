@@ -36,9 +36,7 @@ final class RepeatableHttpClient implements HttpClientInterface
 	 */
 	public function withOptions(array $options): static
 	{
-		$this->httpClient->withOptions($options);
-
-		return new self($this->httpClient);
+		return new self($this->httpClient->withOptions($options));
 	}
 
 }
